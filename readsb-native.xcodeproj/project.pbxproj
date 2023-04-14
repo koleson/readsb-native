@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B62294929E9CB1F00F72FD4 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 9B62294829E9CB1F00F72FD4 /* SwiftProtobuf */; };
 		9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */; };
-		9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */; };
+		9B629A0D29E9C9CA0064D9A7 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0C29E9C9CA0064D9A7 /* FlightListView.swift */; };
 		9B629A0F29E9C9CB0064D9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */; };
 		9B629A1329E9C9CB0064D9A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B629A1229E9C9CB0064D9A7 /* Preview Assets.xcassets */; };
 		9B629A1D29E9C9CB0064D9A7 /* readsb_nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A1C29E9C9CB0064D9A7 /* readsb_nativeTests.swift */; };
@@ -57,7 +57,7 @@
 		9B62295229E9CCB000F72FD4 /* readsb.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = readsb.proto; sourceTree = "<group>"; };
 		9B629A0729E9C9CA0064D9A7 /* readsb-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "readsb-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeApp.swift; sourceTree = "<group>"; };
-		9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B629A0C29E9C9CA0064D9A7 /* FlightListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListView.swift; sourceTree = "<group>"; };
 		9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B629A1029E9C9CB0064D9A7 /* readsb_native.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = readsb_native.entitlements; sourceTree = "<group>"; };
 		9B629A1229E9C9CB0064D9A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				9B62294E29E9CBA100F72FD4 /* Temporary Static Data */,
 				9B62294A29E9CB3C00F72FD4 /* protobuf */,
 				9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */,
-				9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */,
+				9B629A0C29E9C9CA0064D9A7 /* FlightListView.swift */,
 				9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */,
 				9B629A1029E9C9CB0064D9A7 /* readsb_native.entitlements */,
 				9B629A1129E9C9CB0064D9A7 /* Preview Content */,
@@ -319,7 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */,
+				9B629A0D29E9C9CA0064D9A7 /* FlightListView.swift in Sources */,
 				9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
 			);

@@ -31,7 +31,7 @@ struct readsb_nativeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(update: readsb_nativeApp.aircraftsUpdate)
+            FlightListView(viewModel: FlightListViewModel(update: readsb_nativeApp.aircraftsUpdate))
         }
     }
 }
