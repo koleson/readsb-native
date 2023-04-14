@@ -18,4 +18,5 @@
 
 ## Background
 - Mictonic's [`readsb` protobuf fork](https://github.com/Mictronics/readsb-protobuf) exposes flight data as bandwidth/parsing-efficient protocol buffer files.
+  - You can get an idea of what information is available in [`readsb.proto`](https://github.com/Mictronics/readsb-protobuf/blob/dev/readsb.proto).
 - not all information commonly seen on FlightRadar24/FlightAware is available from ADS-B alone - much of it is retrieved from databases that map ICAO hex identifiers in ADS-B messages to the more useful forms.
