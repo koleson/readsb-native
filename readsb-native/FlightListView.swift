@@ -63,6 +63,13 @@ struct FlightListView: View {
     // centered on Sonoma Mountain for now
     @State var visibleRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.32305157159416, longitude: -122.57477949843941), latitudinalMeters: 60_000.0, longitudinalMeters: 60_000.0)
     
+    private func color(forAltitude altitude: Int32) -> Color {
+        let maxColorAltitude = 60_000
+        let proportion: Double = Double(altitude) / Double(maxColorAltitude)
+        let color = Color(hue: proportion, saturation: 1.0, brightness: 1.0)
+        return color
+    }
+    
     
     var body: some View {
         NavigationSplitView(sidebar: {
@@ -86,9 +93,18 @@ struct FlightListView: View {
                     VStack {
                         Image(systemName: "airplane")
                             .rotationEffect(.degrees(Double(aircraft.flight.navHeading)))
-                            .foregroundColor(Color.yellow)
+                            .foregroundColor(color(forAltitude: aircraft.flight.altGeom))
                             .onTapGesture {
-                                print("hi from plane \(aircraft.flight.flight)")
+                                print("tapped plane \(aircraft.flight.flight)")
+                                // selected.insert(<#T##newMember: AircraftMeta##AircraftMeta#>)
+                            }
+                            .onHover { inFrame in
+                                if inFrame {
+                                    print("hovering over plane \(aircraft.flight.flight)")
+                                } else {
+                                    print("hover exited \(aircraft.flight.flight)")
+                                }
+                                
                             }
                         VStack(alignment: .leading) {
                             Text("\(aircraft.flight.flight)")
