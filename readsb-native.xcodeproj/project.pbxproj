@@ -11,6 +11,7 @@
 		9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95E529EDEF4800D2D2F3 /* AircraftPosition.swift */; };
 		9B5E95E829EDEF6E00D2D2F3 /* FlightMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95E729EDEF6E00D2D2F3 /* FlightMapView.swift */; };
 		9B5E95EA29EDF16900D2D2F3 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95E929EDF16900D2D2F3 /* FlightListView.swift */; };
+		9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */; };
 		9B62294929E9CB1F00F72FD4 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 9B62294829E9CB1F00F72FD4 /* SwiftProtobuf */; };
 		9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */; };
 		9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */; };
@@ -62,6 +63,7 @@
 		9B5E95E529EDEF4800D2D2F3 /* AircraftPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftPosition.swift; sourceTree = "<group>"; };
 		9B5E95E729EDEF6E00D2D2F3 /* FlightMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightMapView.swift; sourceTree = "<group>"; };
 		9B5E95E929EDF16900D2D2F3 /* FlightListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListView.swift; sourceTree = "<group>"; };
+		9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPreviewData.swift; sourceTree = "<group>"; };
 		9B62295229E9CCB000F72FD4 /* readsb.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = readsb.proto; sourceTree = "<group>"; };
 		9B629A0729E9C9CA0064D9A7 /* readsb-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "readsb-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeApp.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5E95E529EDEF4800D2D2F3 /* AircraftPosition.swift */,
+				9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */,
 				9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
+				9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

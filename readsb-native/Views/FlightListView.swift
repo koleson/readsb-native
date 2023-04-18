@@ -16,21 +16,33 @@ struct FlightListView: View {
         }
     }
     
+    var searchResults: [AircraftMeta] {
+        if searchText.isEmpty {
+            print("searchText is empty - showing all aircraft")
+            return viewModel.update.aircraft
+        } else {
+            print("filtering on searchtext \(searchText)")
+            return viewModel.update.aircraft.filter { aircraft in
+                aircraft.flight.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
     @State var selected: Set<AircraftMeta> = []
     
     var body: some View {
-        List(viewModel.update.aircraft, id: \.addr, selection: $selected) { aircraft in
-            NavigationLink {
-                FlightDetailView(aircraft: aircraft)
-            } label: {
-                HStack {
-                    Image(systemName: "airplane")
-                    Text(verbatim: aircraft.flight.count > 0 ? aircraft.flight : "(no flight number)")
+        List {
+            ForEach(searchResults, id: \.addr) { aircraftMeta in
+                NavigationLink {
+                                FlightDetailView(aircraft: aircraftMeta)
+                } label: {
+                    HStack {
+                        Image(systemName: "airplane")
+                        Text(verbatim: aircraftMeta.flight.isEmpty ? "(no flight number)" : aircraftMeta.flight)
+                    }
                 }
-                
             }
-        }
-        .searchable(text: $searchText)
+        }.searchable(text: $searchText, placement: .sidebar)
     }
 }
 
