@@ -13,9 +13,12 @@ struct FlightDetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("\(aircraft.flight)").font(.largeTitle).multilineTextAlignment(.leading)
+                Text("\(aircraft.flight)").font(.largeTitle)
+                    .multilineTextAlignment(.leading)
                 Spacer()
-                Text(String(format: "%x", aircraft.addr)).monospaced()
+                Text(String(format: "%x", aircraft.addr))
+                    .monospaced()
+                    .textSelection(.enabled)
             }
 
             Spacer().frame(height: 4.0)
