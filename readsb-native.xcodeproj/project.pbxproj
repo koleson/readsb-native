@@ -26,6 +26,8 @@
 		9BBFD5F029E9D882008250CC /* readsb.proto in Sources */ = {isa = PBXBuildFile; fileRef = 9B62295229E9CCB000F72FD4 /* readsb.proto */; };
 		9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */; };
 		9BE2974229E9ED12000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */; };
+		9BFB37502A326D94005BC45A /* aircraft-database-complete-2023-06.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */; };
+		9BFB37532A326ED1005BC45A /* Airframes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB37512A326ED1005BC45A /* Airframes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -85,6 +87,8 @@
 		9B8236FF29F744DE001EB7CA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 		9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
+		9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "aircraft-database-complete-2023-06.csv"; sourceTree = "<group>"; };
+		9BFB37522A326ED1005BC45A /* Airframes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Airframes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +133,8 @@
 		9B5E95E429EDEF3600D2D2F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9B5E95E529EDEF4800D2D2F3 /* AircraftPosition.swift */,
-				9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */,
+				9BFB374E2A326D80005BC45A /* Airframe Database */,
+				9BFB374D2A326D77005BC45A /* Live Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +232,24 @@
 				9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		9BFB374D2A326D77005BC45A /* Live Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B5E95E529EDEF4800D2D2F3 /* AircraftPosition.swift */,
+				9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */,
+			);
+			path = "Live Data";
+			sourceTree = "<group>";
+		};
+		9BFB374E2A326D80005BC45A /* Airframe Database */ = {
+			isa = PBXGroup;
+			children = (
+				9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */,
+				9BFB37512A326ED1005BC45A /* Airframes.xcdatamodeld */,
+			);
+			path = "Airframe Database";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +367,7 @@
 				9B629A1329E9C9CB0064D9A7 /* Preview Assets.xcassets in Resources */,
 				9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */,
 				9B629A0F29E9C9CB0064D9A7 /* Assets.xcassets in Resources */,
+				9BFB37502A326D94005BC45A /* aircraft-database-complete-2023-06.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +424,7 @@
 				9B5E95E229EDEF0800D2D2F3 /* FlightDetailView.swift in Sources */,
 				9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */,
 				9B629A0B29E9C9CA0064D9A7 /* ReADSBNativeApp.swift in Sources */,
+				9BFB37532A326ED1005BC45A /* Airframes.xcdatamodeld in Sources */,
 				9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
 				9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */,
@@ -784,6 +808,19 @@
 			productName = SwiftProtobuf;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9BFB37512A326ED1005BC45A /* Airframes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BFB37522A326ED1005BC45A /* Airframes.xcdatamodel */,
+			);
+			currentVersion = 9BFB37522A326ED1005BC45A /* Airframes.xcdatamodel */;
+			path = Airframes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B6299FF29E9C9CA0064D9A7 /* Project object */;
 }

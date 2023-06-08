@@ -7,8 +7,11 @@
 
 import SwiftUI
 import MapKit
+import OSLog
 
 struct FlightMapView: View {
+    let logger = Logger(subsystem: "FlightMapView", category: "interaction")
+
     // centered on Sonoma Mountain for now
     private static let sonomaMountain = CLLocationCoordinate2D(
         latitude: 38.32305157159416,
@@ -42,14 +45,14 @@ struct FlightMapView: View {
                         .rotationEffect(.degrees(Double(aircraft.track - 90)))
                         .foregroundColor(color(forAltitude: aircraft.altGeom))
                         .onTapGesture {
-                            print("tapped plane \(aircraft.flight)")
+                            logger.notice("tapped plane \(aircraft.flight, privacy: .public)")
                             // selected.insert(<#T##newMember: AircraftMeta##AircraftMeta#>)
                         }
                         .onHover { inFrame in
                             if inFrame {
-                                print("hovering over plane \(aircraft.flight)")
+                                logger.info("hovering over plane \(aircraft.flight, privacy: .public)")
                             } else {
-                                print("hover exited \(aircraft.flight)")
+                                logger.info("hover exited \(aircraft.flight, privacy: .public)")
                             }
                         }
                     VStack(alignment: .leading) {
