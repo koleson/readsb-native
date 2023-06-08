@@ -40,7 +40,7 @@
 			outputFiles = (
 				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).pb.swift",
 			);
-			script = "# https://ootips.org/yonat/auto-compile-proto-files/\n#\necho \"found a proto file huzzah\"\n# add check to see if protoc is installed here - if not, direct user to install from Homebrew\n# (this probably precludes Xcode Cloud, eh?)\nif [ -d \"/opt/homebrew/bin\" ]; then\n    export PATH=/opt/homebrew/bin:$PATH \nfi\n\nprotoc --proto_path=$INPUT_FILE_DIR --swift_out=$DERIVED_FILE_DIR $INPUT_FILE_PATH\n\necho \"output to ${DERIVED_FILE_DIR}/${INPUT_FILE_BASE}.pb.swift\"\n";
+			script = "# https://ootips.org/yonat/auto-compile-proto-files/\n#\necho \"found a proto file huzzah\"\n# add check to see if protoc is installed here - if not, direct user to install from Homebrew\n# (this probably precludes Xcode Cloud, eh?)\nif [ -d \"/opt/homebrew/bin\" ]; then\n    export PATH=/opt/homebrew/bin:$PATH \nfi\n\n# chatgpt\ncommand -v protoc --help >/dev/null 2>&1 || { echo >&2 \"protoc is not installed. try installing with `brew install swift-protobuf`.\"; exit 1; }\n\nprotoc --proto_path=$INPUT_FILE_DIR --swift_out=$DERIVED_FILE_DIR $INPUT_FILE_PATH\n\necho \"output to ${DERIVED_FILE_DIR}/${INPUT_FILE_BASE}.pb.swift\"\n";
 		};
 /* End PBXBuildRule section */
 
