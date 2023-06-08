@@ -20,6 +20,9 @@
 		9B629A1D29E9C9CB0064D9A7 /* readsb_nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A1C29E9C9CB0064D9A7 /* readsb_nativeTests.swift */; };
 		9B629A2729E9C9CB0064D9A7 /* readsb_nativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2629E9C9CB0064D9A7 /* readsb_nativeUITests.swift */; };
 		9B629A2929E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */; };
+		9B8236FA29F71D40001EB7CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236F929F71D40001EB7CA /* SettingsView.swift */; };
+		9B8236FD29F71D5D001EB7CA /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */; };
+		9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FF29F744DE001EB7CA /* RootViewModel.swift */; };
 		9BBFD5F029E9D882008250CC /* readsb.proto in Sources */ = {isa = PBXBuildFile; fileRef = 9B62295229E9CCB000F72FD4 /* readsb.proto */; };
 		9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */; };
 		9BE2974229E9ED12000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */; };
@@ -76,6 +79,10 @@
 		9B629A2229E9C9CB0064D9A7 /* readsb-nativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "readsb-nativeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B629A2629E9C9CB0064D9A7 /* readsb_nativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeUITests.swift; sourceTree = "<group>"; };
 		9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B8236F929F71D40001EB7CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
+		9B8236FE29F7388C001EB7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B8236FF29F744DE001EB7CA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 		9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,10 +116,12 @@
 		9B5E95E329EDEF2700D2D2F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B8236FB29F71D49001EB7CA /* Settings */,
 				9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */,
 				9B5E95E129EDEF0800D2D2F3 /* FlightDetailView.swift */,
 				9B5E95E729EDEF6E00D2D2F3 /* FlightMapView.swift */,
 				9B5E95E929EDF16900D2D2F3 /* FlightListView.swift */,
+				9B8236FF29F744DE001EB7CA /* RootViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 		9B629A0929E9C9CA0064D9A7 /* readsb-native */ = {
 			isa = PBXGroup;
 			children = (
+				9B8236FE29F7388C001EB7CA /* Info.plist */,
 				9B5E95E429EDEF3600D2D2F3 /* Models */,
 				9B5E95E329EDEF2700D2D2F3 /* Views */,
 				9B62294E29E9CBA100F72FD4 /* Temporary Static Data */,
@@ -209,6 +219,15 @@
 				9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */,
 			);
 			path = "readsb-nativeUITests";
+			sourceTree = "<group>";
+		};
+		9B8236FB29F71D49001EB7CA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9B8236F929F71D40001EB7CA /* SettingsView.swift */,
+				9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,9 +372,12 @@
 				9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */,
 				9B5E95EA29EDF16900D2D2F3 /* FlightListView.swift in Sources */,
 				9B5E95E829EDEF6E00D2D2F3 /* FlightMapView.swift in Sources */,
+				9B8236FA29F71D40001EB7CA /* SettingsView.swift in Sources */,
+				9B8236FD29F71D5D001EB7CA /* ConnectionSettings.swift in Sources */,
 				9B5E95E229EDEF0800D2D2F3 /* FlightDetailView.swift in Sources */,
 				9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */,
 				9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */,
+				9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
 				9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */,
 			);
@@ -516,6 +538,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "readsb-native/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -554,6 +577,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "readsb-native/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
