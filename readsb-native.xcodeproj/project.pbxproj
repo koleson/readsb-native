@@ -13,13 +13,13 @@
 		9B5E95EA29EDF16900D2D2F3 /* FlightListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95E929EDF16900D2D2F3 /* FlightListView.swift */; };
 		9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */; };
 		9B62294929E9CB1F00F72FD4 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 9B62294829E9CB1F00F72FD4 /* SwiftProtobuf */; };
-		9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */; };
+		9B629A0B29E9C9CA0064D9A7 /* ReADSBNativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0A29E9C9CA0064D9A7 /* ReADSBNativeApp.swift */; };
 		9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */; };
 		9B629A0F29E9C9CB0064D9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */; };
 		9B629A1329E9C9CB0064D9A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B629A1229E9C9CB0064D9A7 /* Preview Assets.xcassets */; };
-		9B629A1D29E9C9CB0064D9A7 /* readsb_nativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A1C29E9C9CB0064D9A7 /* readsb_nativeTests.swift */; };
-		9B629A2729E9C9CB0064D9A7 /* readsb_nativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2629E9C9CB0064D9A7 /* readsb_nativeUITests.swift */; };
-		9B629A2929E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */; };
+		9B629A1D29E9C9CB0064D9A7 /* ReADSBNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A1C29E9C9CB0064D9A7 /* ReADSBNativeTests.swift */; };
+		9B629A2729E9C9CB0064D9A7 /* ReADSBNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2629E9C9CB0064D9A7 /* ReADSBNativeUITests.swift */; };
+		9B629A2929E9C9CB0064D9A7 /* ReADSBNativeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B629A2829E9C9CB0064D9A7 /* ReADSBNativeUITestsLaunchTests.swift */; };
 		9B8236FA29F71D40001EB7CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236F929F71D40001EB7CA /* SettingsView.swift */; };
 		9B8236FD29F71D5D001EB7CA /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */; };
 		9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FF29F744DE001EB7CA /* RootViewModel.swift */; };
@@ -69,16 +69,16 @@
 		9B5E95EB29EE189100D2D2F3 /* GlobalPreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPreviewData.swift; sourceTree = "<group>"; };
 		9B62295229E9CCB000F72FD4 /* readsb.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = readsb.proto; sourceTree = "<group>"; };
 		9B629A0729E9C9CA0064D9A7 /* readsb-native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "readsb-native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeApp.swift; sourceTree = "<group>"; };
+		9B629A0A29E9C9CA0064D9A7 /* ReADSBNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReADSBNativeApp.swift; sourceTree = "<group>"; };
 		9B629A0C29E9C9CA0064D9A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B629A1029E9C9CB0064D9A7 /* readsb_native.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = readsb_native.entitlements; sourceTree = "<group>"; };
 		9B629A1229E9C9CB0064D9A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B629A1829E9C9CB0064D9A7 /* readsb-nativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "readsb-nativeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B629A1C29E9C9CB0064D9A7 /* readsb_nativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeTests.swift; sourceTree = "<group>"; };
+		9B629A1C29E9C9CB0064D9A7 /* ReADSBNativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReADSBNativeTests.swift; sourceTree = "<group>"; };
 		9B629A2229E9C9CB0064D9A7 /* readsb-nativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "readsb-nativeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B629A2629E9C9CB0064D9A7 /* readsb_nativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeUITests.swift; sourceTree = "<group>"; };
-		9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readsb_nativeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B629A2629E9C9CB0064D9A7 /* ReADSBNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReADSBNativeUITests.swift; sourceTree = "<group>"; };
+		9B629A2829E9C9CB0064D9A7 /* ReADSBNativeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReADSBNativeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9B8236F929F71D40001EB7CA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
 		9B8236FE29F7388C001EB7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				9B5E95E329EDEF2700D2D2F3 /* Views */,
 				9B62294E29E9CBA100F72FD4 /* Temporary Static Data */,
 				9B62294A29E9CB3C00F72FD4 /* protobuf */,
-				9B629A0A29E9C9CA0064D9A7 /* readsb_nativeApp.swift */,
+				9B629A0A29E9C9CA0064D9A7 /* ReADSBNativeApp.swift */,
 				9B629A0E29E9C9CB0064D9A7 /* Assets.xcassets */,
 				9B629A1029E9C9CB0064D9A7 /* readsb_native.entitlements */,
 				9B629A1129E9C9CB0064D9A7 /* Preview Content */,
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				9B62294B29E9CB5400F72FD4 /* Test Data */,
-				9B629A1C29E9C9CB0064D9A7 /* readsb_nativeTests.swift */,
+				9B629A1C29E9C9CB0064D9A7 /* ReADSBNativeTests.swift */,
 			);
 			path = "readsb-nativeTests";
 			sourceTree = "<group>";
@@ -215,8 +215,8 @@
 		9B629A2529E9C9CB0064D9A7 /* readsb-nativeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9B629A2629E9C9CB0064D9A7 /* readsb_nativeUITests.swift */,
-				9B629A2829E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift */,
+				9B629A2629E9C9CB0064D9A7 /* ReADSBNativeUITests.swift */,
+				9B629A2829E9C9CB0064D9A7 /* ReADSBNativeUITestsLaunchTests.swift */,
 			);
 			path = "readsb-nativeUITests";
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 				9B8236FD29F71D5D001EB7CA /* ConnectionSettings.swift in Sources */,
 				9B5E95E229EDEF0800D2D2F3 /* FlightDetailView.swift in Sources */,
 				9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */,
-				9B629A0B29E9C9CA0064D9A7 /* readsb_nativeApp.swift in Sources */,
+				9B629A0B29E9C9CA0064D9A7 /* ReADSBNativeApp.swift in Sources */,
 				9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
 				9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */,
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B629A1D29E9C9CB0064D9A7 /* readsb_nativeTests.swift in Sources */,
+				9B629A1D29E9C9CB0064D9A7 /* ReADSBNativeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,8 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B629A2929E9C9CB0064D9A7 /* readsb_nativeUITestsLaunchTests.swift in Sources */,
-				9B629A2729E9C9CB0064D9A7 /* readsb_nativeUITests.swift in Sources */,
+				9B629A2929E9C9CB0064D9A7 /* ReADSBNativeUITestsLaunchTests.swift in Sources */,
+				9B629A2729E9C9CB0064D9A7 /* ReADSBNativeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

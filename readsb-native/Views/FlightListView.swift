@@ -6,39 +6,48 @@
 //
 
 import SwiftUI
+import MapKit
+
+class FlightListViewModel {
+    internal init(aircraft: [AircraftMeta]) {
+        self.aircraft = aircraft
+    }
+
+    var aircraft: [AircraftMeta]
+}
 
 struct FlightListView: View {
     var viewModel: FlightListViewModel
-    
+
     @State var searchText: String = "" {
         didSet {
             print("searchText is now \(searchText)")
         }
     }
-    
+
     var searchResults: [AircraftMeta] {
         if searchText.isEmpty {
-            print("searchText is empty - showing all aircraft")
-            return viewModel.update.aircraft
+            // print("searchText is empty - showing all aircraft")
+            return viewModel.aircraft
         } else {
-            print("filtering on searchtext \(searchText)")
-            return viewModel.update.aircraft.filter { aircraft in
+            // print("filtering on searchtext \(searchText)")
+            return viewModel.aircraft.filter { aircraft in
                 aircraft.flight.localizedCaseInsensitiveContains(searchText)
             }
         }
     }
-    
+
     @State var selected: Set<AircraftMeta> = []
-    
+
     var body: some View {
         List {
-            ForEach(searchResults, id: \.addr) { aircraftMeta in
+            ForEach(searchResults, id: \.addr) { aircraft in
                 NavigationLink {
-                                FlightDetailView(aircraft: aircraftMeta)
+                    FlightDetailView(aircraft: aircraft)
                 } label: {
                     HStack {
                         Image(systemName: "airplane")
-                        Text(verbatim: aircraftMeta.flight.isEmpty ? "(no flight number)" : aircraftMeta.flight)
+                        Text(verbatim: aircraft.flight.isEmpty ? "(no flight number)" : aircraft.flight)
                     }
                 }
             }
@@ -48,6 +57,6 @@ struct FlightListView: View {
 
 struct FlightListView_Previews: PreviewProvider {
     static var previews: some View {
-        FlightListView(viewModel: FlightListViewModel(update: GlobalPreviewData.aircraftsUpdate))
+        FlightListView(viewModel: FlightListViewModel(aircraft: GlobalPreviewData.aircraftsUpdate.aircraft))
     }
 }

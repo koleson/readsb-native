@@ -17,7 +17,7 @@ struct GlobalPreviewData {
             fatalError("couldn't get demo data: \(error.localizedDescription)")
         }
     }()
-    
+
     static let aircraftsUpdate: AircraftsUpdate = {
         do {
             let meta = try AircraftsUpdate(serializedData: testData)
@@ -25,6 +25,5 @@ struct GlobalPreviewData {
         } catch {
             fatalError("couldn't materialize aircraft meta?")
         }
-        
     }()
 }

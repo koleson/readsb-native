@@ -10,46 +10,57 @@ import MapKit
 
 struct FlightMapView: View {
     // centered on Sonoma Mountain for now
-    @State var visibleRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.32305157159416, longitude: -122.57477949843941), latitudinalMeters: 60_000.0, longitudinalMeters: 60_000.0)
-    
+    private static let sonomaMountain = CLLocationCoordinate2D(
+        latitude: 38.32305157159416,
+        longitude: -122.57477949843941)
+
+    @State var visibleRegion = MKCoordinateRegion(
+        center: sonomaMountain,
+        latitudinalMeters: 60_000.0,
+        longitudinalMeters: 60_000.0)
+
     private func color(forAltitude altitude: Int32) -> Color {
         let maxColorAltitude = 60_000
         let proportion: Double = Double(altitude) / Double(maxColorAltitude)
         let color = Color(hue: proportion, saturation: 1.0, brightness: 1.0)
         return color
     }
-    
-    var aircraftMarkers: [AircraftPosition]
-    
+
+    var aircraft: [AircraftMeta]
+
     var body: some View {
         Map(coordinateRegion: $visibleRegion,
-            interactionModes: [.all], showsUserLocation: false, userTrackingMode: nil, annotationItems: aircraftMarkers) { aircraft in
-            MapAnnotation(coordinate: aircraft.coordinate) {
+            interactionModes: [.all],
+            showsUserLocation: false,
+            userTrackingMode: nil,
+            annotationItems: aircraft) { aircraft in
+            MapAnnotation(coordinate: aircraft.location) {
                 VStack {
                     Image(systemName: "airplane")
-                        .rotationEffect(.degrees(Double(aircraft.flight.navHeading)))
-                        .foregroundColor(color(forAltitude: aircraft.flight.altGeom))
+                    // have to subtract 90° from heading because icon defaults
+                    // to 90° heading at 0° rotation
+                        .rotationEffect(.degrees(Double(aircraft.track - 90)))
+                        .foregroundColor(color(forAltitude: aircraft.altGeom))
                         .onTapGesture {
-                            print("tapped plane \(aircraft.flight.flight)")
+                            print("tapped plane \(aircraft.flight)")
                             // selected.insert(<#T##newMember: AircraftMeta##AircraftMeta#>)
                         }
                         .onHover { inFrame in
                             if inFrame {
-                                print("hovering over plane \(aircraft.flight.flight)")
+                                print("hovering over plane \(aircraft.flight)")
                             } else {
-                                print("hover exited \(aircraft.flight.flight)")
+                                print("hover exited \(aircraft.flight)")
                             }
                         }
                     VStack(alignment: .leading) {
-                        Text("\(aircraft.flight.flight)")
-                        Text("ALT: \(aircraft.flight.altBaro) ft")
-                        Text("GS: \(aircraft.flight.gs) kts")
+                        Text("\(aircraft.flight)")
+                        Text("ALT: \(aircraft.altBaro) ft")
+                        Text("GS: \(aircraft.gs) kts")
                     }
                     .padding(6.0)
                     .background(Color.black.opacity(0.3)).cornerRadius(3.0)
-                    //.border(.black, width: selected.contains(aircraft) ? 0.0 : 2.0)
+                    // .border(.black, width: selected.contains(aircraft) ? 0.0 : 2.0)
                 }
-                
             }
         }
     }
@@ -58,6 +69,6 @@ struct FlightMapView: View {
 struct FlightMapView_Previews: PreviewProvider {
     static var previews: some View {
         // TODO:  improve preview
-        FlightMapView(aircraftMarkers: [])
+        FlightMapView(aircraft: GlobalPreviewData.aircraftsUpdate.aircraft)
     }
 }
