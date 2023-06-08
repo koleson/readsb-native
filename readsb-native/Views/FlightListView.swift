@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import OSLog
 
 class FlightListViewModel {
     internal init(aircraft: [AircraftMeta]) {
@@ -17,20 +18,23 @@ class FlightListViewModel {
 }
 
 struct FlightListView: View {
+    let logger = Logger(subsystem: "FlightListView", category: "interaction")
+    let filterLogger = Logger(subsystem: "FlightListView", category: "model")
     var viewModel: FlightListViewModel
 
     @State var searchText: String = "" {
         didSet {
-            print("searchText is now \(searchText)")
+            logger.info("searchText is now \(searchText)")
         }
     }
 
+    // TODO:  move to view model
     var searchResults: [AircraftMeta] {
         if searchText.isEmpty {
-            // print("searchText is empty - showing all aircraft")
+            filterLogger.info("searchText is empty - showing all aircraft")
             return viewModel.aircraft
         } else {
-            // print("filtering on searchtext \(searchText)")
+            filterLogger.info("filtering on searchtext \(searchText, privacy: .public)")
             return viewModel.aircraft.filter { aircraft in
                 aircraft.flight.localizedCaseInsensitiveContains(searchText)
             }
