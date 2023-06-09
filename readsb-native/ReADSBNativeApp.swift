@@ -16,6 +16,11 @@ struct ReADSBNativeApp: App {
         WindowGroup {
             ContentView(viewModel: RootViewModel(update: GlobalPreviewData.aircraftsUpdate)).onAppear {
                 Task {
+
+                    // TODO:  extract all this into its own class that also tracks its own state
+                    // if we try to read from airframes while it's loading, we won't get data we would get
+                    // if we waited just a moment.
+                    
                     let persistentContainerLogger = Logger(subsystem: "CoreData", category: "PersistentContainer")
 
                     lazy var persistentContainer: NSPersistentContainer = {
