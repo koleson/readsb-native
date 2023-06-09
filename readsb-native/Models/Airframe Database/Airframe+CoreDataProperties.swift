@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Airframe {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Airframe> {
@@ -32,6 +31,6 @@ extension Airframe {
 
 }
 
-extension Airframe : Identifiable {
+extension Airframe: Identifiable {
 
 }
