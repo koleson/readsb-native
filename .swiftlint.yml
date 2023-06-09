@@ -1,2 +1,6 @@
 disabled_rules:
   - todo
+
+line_length:
+  warning: 160
+  ignores_urls: true
