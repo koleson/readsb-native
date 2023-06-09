@@ -31,6 +31,7 @@
 		9BBFD5F029E9D882008250CC /* readsb.proto in Sources */ = {isa = PBXBuildFile; fileRef = 9B62295229E9CCB000F72FD4 /* readsb.proto */; };
 		9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */; };
 		9BE2974229E9ED12000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */; };
+		9BF70E952A338BE000F1041D /* AirframeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF70E942A338BDF00F1041D /* AirframeDataStore.swift */; };
 		9BFB37502A326D94005BC45A /* aircraft-database-complete-2023-06.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */; };
 		9BFB37532A326ED1005BC45A /* Airframes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB37512A326ED1005BC45A /* Airframes.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		9BB51EFB2A32CE4F00835BE7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 		9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
+		9BF70E942A338BDF00F1041D /* AirframeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirframeDataStore.swift; sourceTree = "<group>"; };
 		9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "aircraft-database-complete-2023-06.csv"; sourceTree = "<group>"; };
 		9BFB37522A326ED1005BC45A /* Airframes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Airframes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +265,7 @@
 				9BB51EEF2A32781400835BE7 /* Airframe+CoreDataClass.swift */,
 				9BB51EF02A32781400835BE7 /* Airframe+CoreDataProperties.swift */,
 				9BB51EF92A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift */,
+				9BF70E942A338BDF00F1041D /* AirframeDataStore.swift */,
 			);
 			path = "Airframe Database";
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF70E952A338BE000F1041D /* AirframeDataStore.swift in Sources */,
 				9BB51EF12A32781400835BE7 /* Airframe+CoreDataClass.swift in Sources */,
 				9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */,
 				9B5E95EA29EDF16900D2D2F3 /* FlightListView.swift in Sources */,
