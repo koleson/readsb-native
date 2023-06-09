@@ -30,6 +30,7 @@ class TabularDataAirframeCSVImporter {
 
     static let logger = Logger(subsystem: "TabularDataAirframeCSVImporter", category: "import")
 
+    /// TODO:  this method should probably throw
     func importAirframes(fromCSVatURL csvURL: URL, intoContext context: NSManagedObjectContext) {
         // stuff
         let options = CSVReadingOptions(
@@ -72,6 +73,7 @@ class TabularDataAirframeCSVImporter {
             TabularDataAirframeCSVImporter.logger.notice("DataFrame creation took \(dataFrameEndTime - dataFrameStartTime) seconds")
             TabularDataAirframeCSVImporter.logger.notice("Core Data entity creation took \(coreDataImportEndTime - coreDataImportStartTime) seconds")
         } catch {
+            // TODO:  this should probably throw
             TabularDataAirframeCSVImporter.logger.error(
                 "couldn't import CSV to DataFrame: \(error.localizedDescription)")
         }
@@ -84,6 +86,7 @@ class TabularDataAirframeCSVImporter {
 
     }
 
+    // TODO:  this method should probably throw
     func addAirframe(fromRow row: DataFrame.Rows.Element, inContext context: NSManagedObjectContext) {
         guard let icaoAddrString = row[icaoAddrColumn], let icaoAddrInt = Int32(icaoAddrString, radix: 16) else {
             print("error getting icaoAddrString or int")

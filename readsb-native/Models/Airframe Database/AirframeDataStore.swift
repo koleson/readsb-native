@@ -13,6 +13,7 @@ class AirframeDataStore {
     enum State {
         case idle
         case importing
+        case error(Error)
         case ready
     }
 
@@ -28,7 +29,8 @@ class AirframeDataStore {
             let container = NSPersistentContainer(name: "Airframes")
             container.loadPersistentStores { [weak self] description, error in
                 if let error = error {
-                    fatalError("Unable to load persistent stores: \(error)")
+                    self?.persistentContainerLogger.error("Unable to load persistent stores: \(error)")
+                    self?.state = .error(error)
                 } else {
                     self?.persistentContainerLogger.info(
                         "set up persistent container successfully - \(description)")
@@ -41,7 +43,17 @@ class AirframeDataStore {
         if resetPersistentStoreEveryLaunch {
             resetPersistentStore(forContainer: persistentContainer)
         }
+
+        switch state {
+        case .error:
+            persistentContainerLogger.error("not importing - problem resetting persistent store")
+        default:
+            importInBackground()
+        }
     }
+
+    /// errors in `resetPersistentStore` won't prevent the app from working, but it might lead to unexpected results
+    /// TODO:  consider error handling here.
 
     private func resetPersistentStore(forContainer persistentContainerToReset: NSPersistentContainer) {
         // based on https://stackoverflow.com/questions/53946485/core-data-how-to-reset-everything-when-setup-with-loadpersistentstores
@@ -53,6 +65,7 @@ class AirframeDataStore {
                 try _ = persistentContainerToReset.persistentStoreCoordinator
                     .addPersistentStore(type: .sqlite, at: storeURL)
             } catch {
+
                 persistentContainerLogger.error(
                     "error resetting persistent store: \(error.localizedDescription)")
             }
@@ -63,6 +76,7 @@ class AirframeDataStore {
     }
 
     private func importInBackground() {
+        state = .importing
         let importContext = persistentContainer.newBackgroundContext()
 
         let testFetchRequest = Airframe.fetchRequest()
@@ -87,9 +101,11 @@ class AirframeDataStore {
             self?.persistentContainerLogger.notice("imported airframes DB in \(importElapsedTime) seconds")
 
             DispatchQueue.main.async {
+                self?.state = .ready
                 do {
                     let postImportObjects = try context.fetch(testFetchRequest)
                     self?.persistentContainerLogger.notice("Airframes count: \(postImportObjects.count)")
+
                 } catch {
                     self?.persistentContainerLogger.error("couldn't get post-import objects to get airframes count")
                 }
