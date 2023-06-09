@@ -92,8 +92,4 @@ struct ReADSBNativeApp: App {
         }
         #endif
     }
-
-    private func getUpdate() {
-
-    }
 }
