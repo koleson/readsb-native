@@ -23,6 +23,11 @@
 		9B8236FA29F71D40001EB7CA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236F929F71D40001EB7CA /* SettingsView.swift */; };
 		9B8236FD29F71D5D001EB7CA /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */; };
 		9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8236FF29F744DE001EB7CA /* RootViewModel.swift */; };
+		9BB51EF12A32781400835BE7 /* Airframe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB51EEF2A32781400835BE7 /* Airframe+CoreDataClass.swift */; };
+		9BB51EF22A32781400835BE7 /* Airframe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB51EF02A32781400835BE7 /* Airframe+CoreDataProperties.swift */; };
+		9BB51EF82A327E5B00835BE7 /* aircraft-database-subset-2023-06.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9BB51EF72A327E5B00835BE7 /* aircraft-database-subset-2023-06.csv */; };
+		9BB51EFA2A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB51EF92A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift */; };
+		9BB51EFC2A32CE4F00835BE7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9BB51EFB2A32CE4F00835BE7 /* .swiftlint.yml */; };
 		9BBFD5F029E9D882008250CC /* readsb.proto in Sources */ = {isa = PBXBuildFile; fileRef = 9B62295229E9CCB000F72FD4 /* readsb.proto */; };
 		9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */; };
 		9BE2974229E9ED12000E13AD /* aircraft-no-distance.pb in Resources */ = {isa = PBXBuildFile; fileRef = 9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */; };
@@ -85,6 +90,11 @@
 		9B8236FC29F71D5D001EB7CA /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
 		9B8236FE29F7388C001EB7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B8236FF29F744DE001EB7CA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		9BB51EEF2A32781400835BE7 /* Airframe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airframe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BB51EF02A32781400835BE7 /* Airframe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airframe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BB51EF72A327E5B00835BE7 /* aircraft-database-subset-2023-06.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "aircraft-database-subset-2023-06.csv"; sourceTree = "<group>"; };
+		9BB51EF92A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabularDataAirframeCSVImporter.swift; sourceTree = "<group>"; };
+		9BB51EFB2A32CE4F00835BE7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		9BE2973F29E9ECE3000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 		9BE2974029E9ECF1000E13AD /* aircraft-no-distance.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "aircraft-no-distance.pb"; sourceTree = "<group>"; };
 		9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "aircraft-database-complete-2023-06.csv"; sourceTree = "<group>"; };
@@ -166,6 +176,7 @@
 		9B6299FE29E9C9CA0064D9A7 = {
 			isa = PBXGroup;
 			children = (
+				9BB51EFB2A32CE4F00835BE7 /* .swiftlint.yml */,
 				9B629A0929E9C9CA0064D9A7 /* readsb-native */,
 				9B629A1B29E9C9CB0064D9A7 /* readsb-nativeTests */,
 				9B629A2529E9C9CB0064D9A7 /* readsb-nativeUITests */,
@@ -247,7 +258,11 @@
 			isa = PBXGroup;
 			children = (
 				9BFB374F2A326D94005BC45A /* aircraft-database-complete-2023-06.csv */,
+				9BB51EF72A327E5B00835BE7 /* aircraft-database-subset-2023-06.csv */,
 				9BFB37512A326ED1005BC45A /* Airframes.xcdatamodeld */,
+				9BB51EEF2A32781400835BE7 /* Airframe+CoreDataClass.swift */,
+				9BB51EF02A32781400835BE7 /* Airframe+CoreDataProperties.swift */,
+				9BB51EF92A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift */,
 			);
 			path = "Airframe Database";
 			sourceTree = "<group>";
@@ -364,10 +379,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB51EFC2A32CE4F00835BE7 /* .swiftlint.yml in Resources */,
 				9B629A1329E9C9CB0064D9A7 /* Preview Assets.xcassets in Resources */,
 				9BE2974129E9ED0E000E13AD /* aircraft-no-distance.pb in Resources */,
 				9B629A0F29E9C9CB0064D9A7 /* Assets.xcassets in Resources */,
 				9BFB37502A326D94005BC45A /* aircraft-database-complete-2023-06.csv in Resources */,
+				9BB51EF82A327E5B00835BE7 /* aircraft-database-subset-2023-06.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB51EF12A32781400835BE7 /* Airframe+CoreDataClass.swift in Sources */,
 				9B629A0D29E9C9CA0064D9A7 /* ContentView.swift in Sources */,
 				9B5E95EA29EDF16900D2D2F3 /* FlightListView.swift in Sources */,
 				9B5E95E829EDEF6E00D2D2F3 /* FlightMapView.swift in Sources */,
@@ -424,9 +442,11 @@
 				9B5E95E229EDEF0800D2D2F3 /* FlightDetailView.swift in Sources */,
 				9B5E95E629EDEF4800D2D2F3 /* AircraftPosition.swift in Sources */,
 				9B629A0B29E9C9CA0064D9A7 /* ReADSBNativeApp.swift in Sources */,
+				9BB51EFA2A32A80600835BE7 /* TabularDataAirframeCSVImporter.swift in Sources */,
 				9BFB37532A326ED1005BC45A /* Airframes.xcdatamodeld in Sources */,
 				9B82370029F744DE001EB7CA /* RootViewModel.swift in Sources */,
 				9BBFD5F029E9D882008250CC /* readsb.proto in Sources */,
+				9BB51EF22A32781400835BE7 /* Airframe+CoreDataProperties.swift in Sources */,
 				9B5E95EC29EE189100D2D2F3 /* GlobalPreviewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
